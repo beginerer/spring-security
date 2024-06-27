@@ -76,8 +76,37 @@ ApplicationFilterConfig(Context context, FilterDef filterDef)
 
 ## filter가 실행되는 과정
 ---
+localhost:8080에 접근을 하면 ApplicationFilterChin의 doFilter메소드가 실행된다.
+```java
+@Override
+    public void doFilter(ServletRequest request, ServletResponse response) throws IOException, ServletException {
 
-ApplicaionFIlterChain클래스에는 ApplicationFilterConfig[]타입의 변수 filters가 있다. 아래의 그림과 같이 등록했었던 filter들이 변수 filters에 저장되어 있다.
+        if (Globals.IS_SECURITY_ENABLED) {
+            final ServletRequest req = request;
+            final ServletResponse res = response;
+            try {
+                java.security.AccessController.doPrivileged((java.security.PrivilegedExceptionAction<Void>) () -> {
+                    internalDoFilter(req, res);
+                    return null;
+                });
+            } catch (PrivilegedActionException pe) {
+                Exception e = pe.getException();
+                if (e instanceof ServletException) {
+                    throw (ServletException) e;
+                } else if (e instanceof IOException) {
+                    throw (IOException) e;
+                } else if (e instanceof RuntimeException) {
+                    throw (RuntimeException) e;
+                } else {
+                    throw new ServletException(e.getMessage(), e);
+                }
+            }
+        } else {
+            internalDoFilter(request, response);
+        }
+    }
+```
+한편,ApplicaionFIlterChain클래스에는 ApplicationFilterConfig[]타입의 변수 filters가 있다. 아래의 그림과 같이 등록했었던 filter들이 변수 filters에 저장되어 있다.
 
 ![스크린샷 2024-06-27 183520](https://github.com/beginerer/spring-security/assets/96945728/57b7bc80-b3d0-4451-9546-9f6a5ccb4cef)
 ![스크린샷 2024-06-27 165228](https://github.com/beginerer/spring-security/assets/96945728/57779808-2736-4076-aabf-6fcfe5e54e7e)
