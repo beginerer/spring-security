@@ -76,7 +76,7 @@ ApplicationFilterConfig(Context context, FilterDef filterDef)
 
 ## filter가 실행되는 과정
 ---
-localhost:8080에 접근을 하면 ApplicationFilterChin의 doFilter메소드가 실행된다.
+localhost:8080에 접근을 하면 ApplicationFilterChain의 doFilter메소드가 실행된다.
 ```java
 @Override
     public void doFilter(ServletRequest request, ServletResponse response) throws IOException, ServletException {
