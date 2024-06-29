@@ -1,6 +1,6 @@
 #  Servlet Filter
 
-## filter가 등록되는 과정
+## filter가 초기화 되는 과정
 ---
 ```java
 public class StandardContext extends ContainerBase implements Context, NotificationEmitter {
