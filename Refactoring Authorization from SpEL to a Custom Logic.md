@@ -3,9 +3,9 @@ https://docs.spring.io/spring-security/reference/servlet/authorization/authorize
 
 시작하기에 앞서 간략하게 스프링 시큐리티의 Servlet Application의 아키텍처에 간략하게 설명하겠습니다.
 
- 스프링 시큐리티의 서블릿은 서블릿 필더구조에 기반합니다. </br>
- 문제는 서블릿 필터와 스프링 필더가 등록되는 시간의 차이가  존재합니다.</br> 
- 서블릿 컨테이너가 작동하면서 필터를 초기화 하는 과정을 거치는데 이때 Spring-defined Beans의 존재를 알 지 못하기 때문입니다.
+ 스프링 시큐리티의 서블릿은 서블릿 필터구조에 기반합니다. </br>
+ 문제는 서블릿 필터와 스프링 필터가 등록되는 시간의 차이가  존재합니다.</br> 
+ 서블릿 컨테이너가 작동하면서 필터를 초기화 하는 과정을 거치는데 이때 Spring-defined Beans의 존재를 알 지 못합니다.
 
 <img src="https://github.com/user-attachments/assets/bc5d4f01-2d87-4f13-bb70-2efe687420ca" width="700" height="470"/>
 </br>
@@ -96,7 +96,7 @@ Once a request is matched, you can authorize it in several ways [already seen](
     }
 ```
 
-READ’권한을 가진 alex와 ‘READ, WRITE, DELETE’권한을 가진 jane을 생성했습니다.
+'READ'권한을 가진 alex와 ‘READ, WRITE, DELETE’권한을 가진 jane을 생성했습니다.
 
 ## Using SpEL Logic
 
