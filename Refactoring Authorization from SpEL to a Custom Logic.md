@@ -59,7 +59,7 @@ SecurityFilterChain또한 @bean이고 차이점은 DelegatingFIlterProxy에 저�
 	}
 ```
 
-매개변수로 supplier<Authentication> 과 httpServletRequest 가 존재하는 것을 확인해 볼 수 있습니다.
+매개변수로 supplier\<Authentication\> 과 httpServletRequest 가 존재하는 것을 확인해 볼 수 있습니다.
 
 ## Authorizing Requests
 
