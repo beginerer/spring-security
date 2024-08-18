@@ -204,4 +204,4 @@ filterchian이 해당 request에 대응되는지 확인하는 메서드인 chain
 
 그리고 아까 우리가 추가했던 커스텀 필터가 인덱스 번호 7번째 에 존재한다는 것을 확인할 수있습니다. 그리고 이 커스텀 필터가 우리가 설정했던 대로 BasicAuthenticationFilter앞에 존재하는 것을 확인해 볼 수 있습니다.
 
-디버깅을 가독성있게 포스팅하는것에 어려움을 느껴서 조금 아쉬운 마음이 들기는 합니다. 그래도 ServletFilterChain에서 필터 순서와 SecurityFIlterChain에서 필터순서를 알게 되었다면 그래도 얻은 것은 분명히 존재한다고 생각합니다.
+디버깅을 가독성있게 포스팅하는것에 어려움을 느껴서 조금 아쉬운 마음이 들기는 합니다.그러나 ServletFilterChain에서 필터 순서와 SecurityFIlterChain에서 필터순서를 알게 되었다면 그래도 얻은 것은 분명히 존재한다고 생각합니다.
