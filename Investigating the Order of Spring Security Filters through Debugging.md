@@ -84,6 +84,7 @@ private void internalDoFilter(ServletRequest request, ServletResponse response)
 ![스크린샷 2024-08-18 044851](https://github.com/user-attachments/assets/44604d5e-3a68-4280-bbb9-f478fc485e63)
 
 servletFIlterChain에 5개의 필터가 등록되있는 것을 확인할 수 있습니다. 이미지를 자세하게 보시면 DelegatingFilterProxy가 FilterChain에서 4번째 순서로 존재한 다는 것을 알 수 있습니다.
+
 <img src="https://github.com/user-attachments/assets/7196d476-8c3a-4df9-afa0-dce44c3085e6" width="600" height="370">
 
 DelegatingFilterProxy 필터가 수행되기 전의 모습입니다.
