@@ -173,7 +173,7 @@ FilterChainProxy의 doFIlter메서드가 방금 전 보았던 VirtualFilterChain
 
 즉, FIlterChainProxy에서 모든 필터를 실행했을 경우 CompositeFIlter로 이동하게 되고 , CompositeFIlter에서도 모든 필터를 실행했을 경우 ServletFIlterChain에서 다음 필터가 실행됩니다.</br></br>
 
-전에 보았듯이 CompositeFIlter에는 HandlerMappingIntrospector 과 FilterChainProxy가 인덱스 0과 1로 리스트의 형태로 저장되어 있습니다.  </br></br>
+전에 보았듯이 CompositeFIlter에는 HandlerMappingIntrospector 과 FilterChainProxy가 인덱스 0과 1로 리스트에 저장되어 있습니다. </br></br>
 만약 FilterChainPoxy에서 모든 필터가 수행되서 CompositeFilter로 리턴되었다면 servletFilterChain에서 DelegatingFilterProxy는 4번째 순서이고, 5번재는 TomcatWebSocket 이므로 TomcatWebSocket이 실행될 차례라는 것을 알 수 있습니다.
 
 ![스크린샷 2024-08-18 204055](https://github.com/user-attachments/assets/7e496366-0d99-4646-a643-fe3f6599ee65)
